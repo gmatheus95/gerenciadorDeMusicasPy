@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="managerController.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="musicList.py" />
     <Compile Include="music.py" />
     <Compile Include="main.py" />

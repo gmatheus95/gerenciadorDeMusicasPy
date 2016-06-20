@@ -6,7 +6,7 @@ class MusicList:
         self.__name = name
         self.__description = description
         self.__duration = duration
-        self.__musList = musList
+        self.__musList = musList #list of Musics
         self.__nSongs = nSongs
     
     def addMusica(self, musica):
@@ -15,17 +15,17 @@ class MusicList:
         self.__nSongs += 1
         
         
-    def removeMusica(self, indice):
-        #o vetor de musicas comeca com indice 0, entao a removida sera a musica de indice "indice-1"
-        self.__duration -= lista.__musList[indice-1].duration
-        self.__musList.remove(lista.__musList[indice-1])
+    def removeMusica(self, index):
+        #the music array starts in 0, so the song to be removed is the song[index-1]
+        self.__duration -= self.__musList[index-1].duration
+        self.__musList.remove(self.__musList[index-1])
         self.__nSongs -= 1
         
-    def mudaPosMusica(self, indiceMus, novoIndice):
-        #esses indices ser�o sempre considerados partindo de 1 na interface do usuario e partindo de 0 para acesso a vetores
-        music = self.__musList[indiceMus-1]
-        self.__musList.remove(lista.__musList[indiceMus-1])        
-        self.__musList.insert(novoIndice-1, music)
+    def mudaPosMusica(self, indexMus, novoindex):
+        #these index starts in 1 in User Interface and in 0 in code to properly access the arrays
+        music = self.__musList[indexMus-1]
+        self.__musList.remove(self.__musList[indexMus-1])        
+        self.__musList.insert(novoindex-1, music)
         
     def setname(self, name):
         self.__name = name
@@ -47,3 +47,4 @@ class MusicList:
     
     def getNSongs(self):
         return self.__nSongs
+        
