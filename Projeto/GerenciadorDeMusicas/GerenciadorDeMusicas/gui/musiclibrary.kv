@@ -5,6 +5,7 @@
     orientation: 'vertical'
     id: audioBackground
 
+    # Background
     canvas:
         Color:
             rgb: 1, 1, 1
@@ -37,7 +38,7 @@
         size_hint: (1, .95)
         pos_hint: {'top':1, 'right':1}
 
-
+        # Reference for list of musics
         BoxLayout:
             size_hint:(.45, 1)
             id: musicPanel
@@ -63,6 +64,7 @@
                 pos_hint: {'x': 0,'y': 0}
                 size_hint: .05, 1
                 text: 'Play'
+                on_press: app.play_music()
 
             Slider:
                 min: 0.0
