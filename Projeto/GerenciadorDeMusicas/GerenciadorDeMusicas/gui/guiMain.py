@@ -10,6 +10,7 @@ from kivy.uix.listview import ListView, ListItemButton
 from kivy.lang import Builder
 from kivy.factory import Factory
 
+
 from fixtures import integers_dict
 
 kivy.require('1.0.8')
@@ -27,30 +28,30 @@ Builder.load_string('''
 ''')
 
 
-class AudioButton(Button):
-    filename = StringProperty(None)
-    sound = ObjectProperty(None, allownone=True)
-    volume = NumericProperty(1.0)
-
-    def on_press(self):
-        if self.sound is None:
-            self.sound = SoundLoader.load(self.filename)
-        # stop the sound if it's currently playing
-        if self.sound.status != 'stop':
-            self.sound.stop()
-        self.sound.volume = self.volume
-        self.sound.play()
-
-    def release_audio(self):
-        if self.sound:
-            self.sound.stop()
-            self.sound.unload()
-            self.sound = None
-
-    def set_volume(self, volume):
-        self.volume = volume
-        if self.sound:
-            self.sound.volume = volume
+# class AudioButton(Button):
+#     filename = StringProperty(None)
+#     sound = ObjectProperty(None, allownone=True)
+#     volume = NumericProperty(1.0)
+#
+#     def on_press(self):
+#         if self.sound is None:
+#             self.sound = SoundLoader.load(self.filename)
+#         # stop the sound if it's currently playing
+#         if self.sound.status != 'stop':
+#             self.sound.stop()
+#         self.sound.volume = self.volume
+#         self.sound.play()
+#
+#     def release_audio(self):
+#         if self.sound:
+#             self.sound.stop()
+#             self.sound.unload()
+#             self.sound = None
+#
+#     def set_volume(self, volume):
+#         self.volume = volume
+#         if self.sound:
+#             self.sound.volume = volume
 
 
 class AudioBackground(BoxLayout):
@@ -66,9 +67,14 @@ class AlbumViewer(BoxLayout):
 
 
 class MusicLibraryApp(App):
+    filename = StringProperty(None)
+    sound = ObjectProperty(None, allownone=True)
+    volume = NumericProperty(1.0)
+
     def build(self):
         root = AudioBackground(spacing=5)
 
+        # Instantiating list of musics
         list_item_args_converter = \
             lambda row_index, rec: {'text': rec['text'],
                                     'is_selected': rec['is_selected'],
@@ -102,13 +108,16 @@ class MusicLibraryApp(App):
         metadata_view = MetadataEditor()
         root.ids["miscPanel"].add_widget(metadata_view)
 
-    def release_audio(self):
-        for audiobutton in self.root.ids.sl.children:
-            audiobutton.release_audio()
+    def play_music(self):
+        self.filename = 'b.mp3'
 
-    def set_volume(self, value):
-        for audiobutton in self.root.ids.sl.children:
-            audiobutton.set_volume(value)
+        if self.sound is None:
+            self.sound = SoundLoader.load(self.filename)
+        # stop the sound if it's currently playing
+        if self.sound.status != 'stop':
+            self.sound.stop()
+        self.sound.volume = self.volume
+        self.sound.play()
 
 if __name__ == '__main__':
     MusicLibraryApp().run()
