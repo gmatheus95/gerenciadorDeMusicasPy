@@ -26,11 +26,11 @@
                 icon: 'atlas://data/images/defaulttheme/audio-volume-high'
             ActionButton:
                 text: 'Btn1'
-                icon: 'saveIcon.png'
+                icon: 'gui\\saveIcon.png'
                 on_press: app.view_metadata(root)
             ActionButton:
                 text: 'Btn2'
-                icon: 'albumIcon.png'
+                icon: 'gui\\albumIcon.png'
                 on_press: app.view_albums(root)
 
     BoxLayout:
@@ -45,7 +45,8 @@
 
         Splitter:
             strip_size: '4pt'
-            id: miscPanel
+            ScrollView:
+                id: miscPanel
 
     BoxLayout:
         id: audioBar
@@ -56,7 +57,7 @@
             Color:
                 rgb: 1, 1, 1
             Rectangle:
-                source: 'audioBar.png'
+                source: 'gui\\audioBar.png'
                 size: self.size
 
         BoxLayout:
@@ -73,6 +74,7 @@
                 orientation: "horizontal"
                 size_hint_x: .25
                 pos_hint: {'x': 0,'y': 0}
+                on_value: app.set_volume(self.value)
 
             # TODO: rethink progress bar
             ProgressBar:
@@ -87,53 +89,12 @@
                 color: (0, 0, 0, 1)
 
 <AlbumViewer>:
-    ScrollView:
-        GridLayout:
-            cols: 3
-            padding: 10
-            spacing: 10
-            height: self.minimum_height
-            size_hint: None, None
-            Button:
-                text: "Album 1"
-                size_hint: None, None
-                size: 200, 200
-            Button:
-                text: "Album 2"
-                size_hint: None, None
-                size: 200, 200
-            Button:
-                text: "Album 3"
-                size_hint: None, None
-                size: 200, 200
-            Button:
-                text: "Album 4"
-                size_hint: None, None
-                size: 200, 200
-            Button:
-                text: "Album 5"
-                size_hint: None, None
-                size: 200, 200
-            Button:
-                text: "Album 6"
-                size_hint: None, None
-                size: 200, 200
-            Button:
-                text: "Album 7"
-                size_hint: None, None
-                size: 200, 200
-            Button:
-                text: "Album 8"
-                size_hint: None, None
-                size: 200, 200
-            Button:
-                text: "Album 9"
-                size_hint: None, None
-                size: 200, 200
-            Button:
-                text: "Album 10"
-                size_hint: None, None
-                size: 200, 200
+    id: albumsPosition
+    cols: 3
+    padding: 10
+    spacing: 10
+    height: self.minimum_height
+    size_hint: None, None
 
 <MetadataEditor>:
     orientation: 'vertical'
