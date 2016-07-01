@@ -244,7 +244,8 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 
-.idea/
-.mp3
-.wav
-.db
+.idea/*
+*.mp3
+*.wav
+*.db
+*.pyc
