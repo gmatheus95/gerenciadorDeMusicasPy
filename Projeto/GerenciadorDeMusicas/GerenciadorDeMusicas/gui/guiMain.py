@@ -26,6 +26,7 @@ Builder.load_string('''
         is_selected: ctx.is_selected
 ''')
 
+
 class AudioButton(Button):
     filename = StringProperty(None)
     sound = ObjectProperty(None, allownone=True)
@@ -56,6 +57,14 @@ class AudioBackground(BoxLayout):
     pass
 
 
+class MetadataEditor(BoxLayout):
+    pass
+
+
+class AlbumViewer(BoxLayout):
+    pass
+
+
 class MusicLibraryApp(App):
     def build(self):
         root = AudioBackground(spacing=5)
@@ -80,6 +89,18 @@ class MusicLibraryApp(App):
 
         root.ids["musicPanel"].add_widget(list_view)
         return root
+
+    def view_albums(self, root):
+        if root.ids["miscPanel"].children:
+            root.ids["miscPanel"].clear_widgets()
+        album_view = AlbumViewer()
+        root.ids["miscPanel"].add_widget(album_view)
+
+    def view_metadata(self, root):
+        if root.ids["miscPanel"].children:
+            root.ids["miscPanel"].clear_widgets()
+        metadata_view = MetadataEditor()
+        root.ids["miscPanel"].add_widget(metadata_view)
 
     def release_audio(self):
         for audiobutton in self.root.ids.sl.children:

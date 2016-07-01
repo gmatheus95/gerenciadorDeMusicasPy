@@ -12,6 +12,26 @@
             source: 'data/images/background.jpg'
             size: self.size
 
+    ActionBar:
+        pos_hint: {'top':1}
+        ActionView:
+            use_separator: True
+            ActionPrevious:
+                title: 'OLAR'
+                with_previous: False
+            ActionOverflow:
+            ActionButton:
+                text: 'Btn0'
+                icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+            ActionButton:
+                text: 'Btn1'
+                icon: 'saveIcon.png'
+                on_press: app.view_metadata(root)
+            ActionButton:
+                text: 'Btn2'
+                icon: 'albumIcon.png'
+                on_press: app.view_albums(root)
+
     BoxLayout:
         orientation: 'horizontal'
         size_hint: (1, .95)
@@ -24,54 +44,7 @@
 
         Splitter:
             strip_size: '4pt'
-            ScrollView:
-                GridLayout:
-                    cols: 3
-                    padding: 10
-                    spacing: 10
-                    height: self.minimum_height
-                    size_hint: None, None
-                    Button:
-                        text: "Album 1"
-                        size_hint: None, None
-                        size: 200, 200
-                    Button:
-                        text: "Album 2"
-                        size_hint: None, None
-                        size: 200, 200
-                    Button:
-                        text: "Album 3"
-                        size_hint: None, None
-                        size: 200, 200
-                    Button:
-                        text: "Album 4"
-                        size_hint: None, None
-                        size: 200, 200
-                    Button:
-                        text: "Album 5"
-                        size_hint: None, None
-                        size: 200, 200
-                    Button:
-                        text: "Album 6"
-                        size_hint: None, None
-                        size: 200, 200
-                    Button:
-                        text: "Album 7"
-                        size_hint: None, None
-                        size: 200, 200
-                    Button:
-                        text: "Album 8"
-                        size_hint: None, None
-                        size: 200, 200
-                    Button:
-                        text: "Album 9"
-                        size_hint: None, None
-                        size: 200, 200
-                    Button:
-                        text: "Album 10"
-                        size_hint: None, None
-                        size: 200, 200
-
+            id: miscPanel
 
     BoxLayout:
         id: audioBar
@@ -110,6 +83,135 @@
                 size_hint_x: .25
                 text: 'Musica legal'
                 color: (0, 0, 0, 1)
+
+<AlbumViewer>:
+    ScrollView:
+        GridLayout:
+            cols: 3
+            padding: 10
+            spacing: 10
+            height: self.minimum_height
+            size_hint: None, None
+            Button:
+                text: "Album 1"
+                size_hint: None, None
+                size: 200, 200
+            Button:
+                text: "Album 2"
+                size_hint: None, None
+                size: 200, 200
+            Button:
+                text: "Album 3"
+                size_hint: None, None
+                size: 200, 200
+            Button:
+                text: "Album 4"
+                size_hint: None, None
+                size: 200, 200
+            Button:
+                text: "Album 5"
+                size_hint: None, None
+                size: 200, 200
+            Button:
+                text: "Album 6"
+                size_hint: None, None
+                size: 200, 200
+            Button:
+                text: "Album 7"
+                size_hint: None, None
+                size: 200, 200
+            Button:
+                text: "Album 8"
+                size_hint: None, None
+                size: 200, 200
+            Button:
+                text: "Album 9"
+                size_hint: None, None
+                size: 200, 200
+            Button:
+                text: "Album 10"
+                size_hint: None, None
+                size: 200, 200
+
+<MetadataEditor>:
+    orientation: 'vertical'
+    pos_hint_y: {'top':1}
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: '32dp'
+        Label:
+            size_hint_x: .25
+            size_hint_y: None
+            height: '32dp'
+            text: 'Title'
+            color: (1, 1, 1, 1)
+        TextInput:
+            size_hint_y: None
+            height: '32dp'
+            multiline: False
+            text: 'Monoline textinput'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: '32dp'
+        Label:
+            size_hint_x: .25
+            size_hint_y: None
+            height: '32dp'
+            text: 'Artist'
+            color: (1, 1, 1, 1)
+        TextInput:
+            size_hint_y: None
+            height: '32dp'
+            multiline: False
+            text: 'Monoline textinput'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: '32dp'
+        Label:
+            size_hint_x: .25
+            size_hint_y: None
+            height: '32dp'
+            text: 'Album'
+            color: (1, 1, 1, 1)
+        TextInput:
+            size_hint_y: None
+            height: '32dp'
+            multiline: False
+            text: 'Monoline textinput'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: '32dp'
+        Label:
+            size_hint_x: .25
+            size_hint_y: None
+            height: '32dp'
+            text: 'Track'
+            color: (1, 1, 1, 1)
+        TextInput:
+            size_hint_y: None
+            height: '32dp'
+            multiline: False
+            text: 'Monoline textinput'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: None
+        height: '32dp'
+        Label:
+            size_hint_x: .25
+            size_hint_y: None
+            height: '32dp'
+            text: 'Genre'
+            color: (1, 1, 1, 1)
+        TextInput:
+            size_hint_y: None
+            height: '32dp'
+            multiline: False
+            text: 'Monoline textinput'
+    Widget:
 
 <AudioButton>:
     size_hint: None,0.333
