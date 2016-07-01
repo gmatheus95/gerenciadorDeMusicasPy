@@ -1,13 +1,14 @@
 class Music:
     
     #construtor
-    def __init__(self, track="0", name="name", album="album", band="band", duration=0.1):
+    def __init__(self, track="", name="", album="", band="", duration=0):
         self.__track = track
         self.__name = name
         self.__album = album
         self.__band = band
         self.__duration = duration        
     
+
     #gets e sets
     def setTrack(self, track):
         self.__track = track
