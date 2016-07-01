@@ -1,5 +1,6 @@
 import sqlite3
 
+
 class DB:
     def __init__(self):
         self.__conn=sqlite3.connect("db_musManager.db")
@@ -47,15 +48,16 @@ class DB:
         cursor.execute(clause)
         self.__conn.commit()
         cursor.close()
-        #cursor.execute('''update agenda set telefone = ? where nome = ?''', [telefone,nome])
 
     def closeConnection(self):
         self.__conn.close()
 
-
+'''
 x = DB()
 x.create()
+x.executeInsertUpdateDelete('UPDATE song SET filepath = ? where id = ?', [newfilepath,id])
 x.executeInsertUpdateDelete('INSERT INTO song(filepath) VALUES ("D:\Músicas\Caro Emerald\Absolutely Me.mp3")')
 #x.executeInsertUpdateDelete('DELETE FROM song')
 y = x.executeSelect('SELECT * FROM song')
 print(y)
+'''
