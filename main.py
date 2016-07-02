@@ -40,12 +40,10 @@ class MusicLibraryApp(App):
     currentSongPosition = NumericProperty(None)
     progressBarPosition = NumericProperty(0)
 
-    possibleSongsList = []
-
     kv_directory = 'gui'
 
     def load_song(self, song, nothing):
-        # TODO: Separate selected song from loaded
+        # TODO: Separate selected song from playing song
         if self.sound:
             if self.sound.state != 'stop':
                 self.sound.stop()
@@ -124,8 +122,7 @@ class MusicLibraryApp(App):
 
     def update_progress(self, dt):
         self.currentSongPosition = self.sound.get_pos()
-        if self.currentSongPosition > 0:
-            self.progressBarPosition = (self.currentSongPosition * 100.0)/self.currentSongDuration
+        self.progressBarPosition = (self.currentSongPosition * 100.0)/self.currentSongDuration
 
     def set_volume(self, value):
         self.volume = value
