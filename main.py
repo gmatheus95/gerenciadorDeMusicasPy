@@ -5,57 +5,15 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.core.audio import SoundLoader
 from kivy.properties import StringProperty, ObjectProperty, NumericProperty
-from kivy.adapters.dictadapter import DictAdapter
-from kivy.uix.selectableview import SelectableView
-from kivy.uix.listview import ListView, ListItemButton
-from kivy.uix.slider import Slider
-from kivy.lang import Builder
-from kivy.factory import Factory
 from kivy.clock import Clock
+from functools import partial
 
 from backend.managerController import *
-from gui.fixtures import integers_dict
 
 kivy.require('1.0.8')
 
-# Lists definitions
-Factory.register('SelectableView', cls=SelectableView)
-Factory.register('ListItemButton', cls=ListItemButton)
-Builder.load_string('''
-[CustomListItem@SelectableView+BoxLayout]:
-    size_hint_y: ctx.size_hint_y
-    height: ctx.height
-    ListItemButton:
-        text: ctx.text
-        is_selected: ctx.is_selected
-''')
 
 controller = ManagerControllerSingleton()
-
-# class AudioButton(Button):
-#     filename = StringProperty(None)
-#     sound = ObjectProperty(None, allownone=True)
-#     volume = NumericProperty(1.0)
-#
-#     def on_press(self):
-#         if self.sound is None:
-#             self.sound = SoundLoader.load(self.filename)
-#         # stop the sound if it's currently playing
-#         if self.sound.status != 'stop':
-#             self.sound.stop()
-#         self.sound.volume = self.volume
-#         self.sound.play()
-#
-#     def release_audio(self):
-#         if self.sound:
-#             self.sound.stop()
-#             self.sound.unload()
-#             self.sound = None
-#
-#     def set_volume(self, volume):
-#         self.volume = volume
-#         if self.sound:
-#             self.sound.volume = volume
 
 
 class AudioBackground(BoxLayout):
@@ -82,10 +40,18 @@ class MusicLibraryApp(App):
     currentSongPosition = NumericProperty(None)
     progressBarPosition = NumericProperty(0)
 
+    possibleSongsList = []
+
     kv_directory = 'gui'
 
-    def load_song(self, song):
+    def load_song(self, song, nothing):
+        # TODO: Separate selected song from loaded
+        if self.sound:
+            if self.sound.state != 'stop':
+                self.sound.stop()
+                Clock.unschedule(self.update_progress)
         self.localSong = song
+        print(song.path)
         self.filename = song.path
         self.sound = SoundLoader.load(self.filename)
         self.currentSongPosition = 0
@@ -93,33 +59,22 @@ class MusicLibraryApp(App):
     def build(self):
         root = AudioBackground(spacing=5)
 
-        # Instantiating list of musics
-        list_item_args_converter = \
-            lambda row_index, rec: {'text': rec['text'],
-                                    'is_selected': rec['is_selected'],
-                                    'size_hint_y': None,
-                                    'height': 25}
-
-        # Here we create a dict adapter with 1..100 integer strings as
-        # sorted_keys, and integers_dict from fixtures as data, passing our
-        # CompositeListItem kv template for the list item view. Then we
-        # create a list view using this adapter. args_converter above converts
-        # dict attributes to ctx attributes.
-        dict_adapter = DictAdapter(sorted_keys=[str(i) for i in range(100)],
-                                   data=integers_dict,
-                                   args_converter=list_item_args_converter,
-                                   template='CustomListItem')
-
-        list_view = ListView(adapter=dict_adapter)
-
-        root.ids["musicPanel"].add_widget(list_view)
-
         # Initializing components
         controller.initialize_components()
 
-        # TODO: REMOVER DEPOIS DO TESTE
-        self.load_song(controller.allSongs[5])
-        print(controller.allSongs[5].path)
+        # Listing all musics on db
+        songList = []
+        for song in controller.allSongs:
+            songList.append(Button(text=song.title, size=(50, 30), size_hint=(1, None)))
+            root.ids["musicPanel"].add_widget(songList[len(songList) - 1])
+
+        # If there is a song, load it and binding the buttons
+        if len(songList) > 1:
+            self.load_song(controller.allSongs[0], None)
+            for num in range(0, len(songList) - 1):
+                # Using a partial to pass args
+                button_import = partial(self.load_song, controller.allSongs[num])
+                songList[num].bind(on_press=button_import)
 
         return root
 
