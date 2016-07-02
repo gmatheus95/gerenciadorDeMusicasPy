@@ -1,8 +1,9 @@
 class Music:
     
     #construtor
-    def __init__(self, id, track, title, album, band, duration):
+    def __init__(self, id, path, track, title, album, band, duration):
         self.__id = id
+        self.__path = path
         self.__track = track
         self.__title = title
         self.__album = album
@@ -14,11 +15,15 @@ class Music:
     def setTrack(self, track):
         self.__track = track
     
-    def settitle(self, title):
+    def setTitle(self, title):
         self.__title = title
-    
+
+    def setPath(self, path):
+        self.__path = path
+
     def setAlbum(self, album):
         self.__album = album
+
         
     def setBand(self, band):
         self.__band = band
@@ -28,8 +33,11 @@ class Music:
 
     def getTrack(self):
         return self.__track
+
+    def getPath(self):
+        return self.__path
     
-    def gettitle(self):
+    def getTitle(self):
             return self.__title
         
     def getAlbum(self):
@@ -42,9 +50,10 @@ class Music:
             return self.__duration
         
     track = property(getTrack, setTrack)
-    title = property(gettitle, settitle)
+    title = property(getTitle, setTitle)
     album = property(getAlbum, setAlbum)
     band = property(getBand, setBand)
     duration = property(getDur,setDur)
+    path = property(getPath, setPath)
     
     #funcoes

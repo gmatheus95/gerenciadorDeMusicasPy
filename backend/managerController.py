@@ -32,7 +32,7 @@ class ManagerController:
     def __addSongToEnvironment(self, song):
         # path is in 1
         fields = retrieveFields(song[1])
-        self.allSongs.append(Music(song[0], fields['track'], fields['title'], fields['album'], fields['band'],
+        self.allSongs.append(Music(song[0], song[1], fields['track'], fields['title'], fields['album'], fields['band'],
                                    fields['duration']))
         # links the song to the album
         if fields['album'] in self.dictAlbums:
@@ -47,7 +47,6 @@ class ManagerController:
             self.dictAlbums[fields['album']] = index
             self.allAlbums.append(Album(fields['album'], fields['band']))
             self.allAlbums[index].addSong(song[0])
-            #print('\n' + self.allAlbums[index].getName() + "-" + self.allAlbums[index].getArtistName())
 
         # links the song to the artist
         if fields['band'] in self.dictArtists:
@@ -57,15 +56,6 @@ class ManagerController:
             self.dictArtists[fields['band']] = index
             self.allArtists.append(Artist(fields['band']))
             self.allArtists[index].addSong(song[0])
-            #print('\n' + self.allArtists[index].getName())
-        '''
-        print('\n' + self.allSongs[len(self.allSongs) - 1].track + " - " +
-              self.allSongs[len(self.allSongs) - 1].title + " - " +
-              self.allSongs[len(self.allSongs) - 1].album + " - " +
-              self.allSongs[len(self.allSongs) - 1].band)
-        '''
-
-
 
     def initialize_components(self):
         self.__dbinstance = DB()
@@ -102,12 +92,9 @@ class ManagerController:
                 self.__addSongToEnvironment(song[0])
 
 
-
 class ManagerControllerSingleton(ManagerController, metaclass=Singleton):
     pass
 
-controller = ManagerControllerSingleton()
-controller.initialize_components()
-controller.import_song()
+
 
 

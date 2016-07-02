@@ -53,9 +53,9 @@ class DB:
         self.__conn.close()
 
 
-x = DB()
-x.create()
-x.executeInsertUpdateDelete('DELETE FROM song')
+#x = DB()
+#x.create()
+#x.executeInsertUpdateDelete('DELETE FROM song')
 #x.executeInsertUpdateDelete('UPDATE song SET filepath = ? where id = ?', [newfilepath,id])
 #x.executeInsertUpdateDelete('INSERT INTO song(filepath) '
 #                            'SELECT "D:\Músicas\Bixiga70\\01 100% 13.mp3"'
@@ -67,5 +67,5 @@ x.executeInsertUpdateDelete('DELETE FROM song')
 #                            '"D:\Músicas\Bixiga70\\01 100% 13.mp3");')
 #x.executeInsertUpdateDelete('INSERT OR IGNORE INTO song(filepath) VALUES ("D:\Músicas\Bixiga70\\01 100% 13.mp3")')
 #x.executeInsertUpdateDelete('INSERT OR IGNORE INTO song(filepath) VALUES ("D:\Músicas\Bixiga70\\01 100% 13.mp3")')
-y = x.executeSelect('SELECT * FROM song')
-print(y)
+#y = x.executeSelect('SELECT * FROM song')
+#print(y)

@@ -32,6 +32,14 @@
                 text: 'Btn2'
                 icon: 'gui\\albumIcon.png'
                 on_press: app.view_albums(root)
+            ActionButton:
+                text: 'ArtistView'
+                icon: 'gui\\artistsIcon.png'
+                on_press: app.view_artists(root)
+            ActionButton:
+                text: 'ImportMusic'
+                icon: 'gui\\importIcon.png'
+                on_press: app.import_songs(root)
 
     BoxLayout:
         orientation: 'horizontal'
@@ -76,12 +84,21 @@
                 pos_hint: {'x': 0,'y': 0}
                 on_value: app.set_volume(self.value)
 
-            # TODO: rethink progress bar
+            # Music progress bar
             ProgressBar:
-                id: pb
                 size_hint_x: .50
                 height: '48dp'
-                value: 75
+                min: 0.0
+                max: 100.0
+                value: app.progressBarPosition
+                #on_value: app.move_position(self.value_normalized)
+
+#                canvas:
+#                    Color:
+#                        rgb: 0, 0, 0
+#                    Rectangle:
+#                        pos: self.pos
+#                        size: self.size
 
             Label:
                 size_hint_x: .25
@@ -89,6 +106,14 @@
                 color: (0, 0, 0, 1)
 
 <AlbumViewer>:
+    id: albumsPosition
+    cols: 3
+    padding: 10
+    spacing: 10
+    height: self.minimum_height
+    size_hint: None, None
+
+<ArtistViewer>:
     id: albumsPosition
     cols: 3
     padding: 10
@@ -113,7 +138,8 @@
             size_hint_y: None
             height: '32dp'
             multiline: False
-            text: 'Monoline textinput'
+            text: app.localSong.title
+            on_text: app.change_title(self)
     BoxLayout:
         orientation: 'horizontal'
         size_hint_y: None
@@ -128,7 +154,8 @@
             size_hint_y: None
             height: '32dp'
             multiline: False
-            text: 'Monoline textinput'
+            text: app.localSong.band
+            on_text: app.change_artist(self)
     BoxLayout:
         orientation: 'horizontal'
         size_hint_y: None
@@ -143,7 +170,8 @@
             size_hint_y: None
             height: '32dp'
             multiline: False
-            text: 'Monoline textinput'
+            text: app.localSong.album
+            on_text: app.change_album(self)
     BoxLayout:
         orientation: 'horizontal'
         size_hint_y: None
@@ -158,22 +186,13 @@
             size_hint_y: None
             height: '32dp'
             multiline: False
-            text: 'Monoline textinput'
-    BoxLayout:
-        orientation: 'horizontal'
-        size_hint_y: None
-        height: '32dp'
-        Label:
-            size_hint_x: .25
-            size_hint_y: None
-            height: '32dp'
-            text: 'Genre'
-            color: (1, 1, 1, 1)
-        TextInput:
-            size_hint_y: None
-            height: '32dp'
-            multiline: False
-            text: 'Monoline textinput'
+            text: app.localSong.track
+            on_text: app.change_track(self)
+    Widget:
+    Button:
+        text: 'BOTAO'
+        size_hint: (.5, .2)
+        on_press: app.save_metadata()
     Widget:
 
 <AudioButton>:

@@ -15,6 +15,7 @@ def retrieveFields(path):
     fields = {'track': track, 'title': title, 'album': album, 'band': band, 'duration': duration}
     return fields
 
+
 def changeFields(path, track, title, album, band):
     audio = ID3(path)
     audio['TRCK'].text[0] = track
@@ -22,17 +23,7 @@ def changeFields(path, track, title, album, band):
     audio['TALB'].text[0] = album
     audio['TPE1'].text[0] = band
 
-    #to work properly in Windows
+    # To work properly in Windows
     audio.update_to_v23()
     audio.save(v2_version=3)
-
-
-audio = MP3('D:\\Músicas\\Caro Emerald\\A Night Like This.mp3')
-print(audio.info.length)
-print(audio['TIT2'].text[0])
-#audio['title'] = u'A Night Like This'
-#audio['albumartist'] = u'Caro Emerald'
-#audio.update_to_v23()
-#audio.save(v2_version=3)
-
-#def changeMetadata(track, title, )
+    print('Metadata saved successfully.')
