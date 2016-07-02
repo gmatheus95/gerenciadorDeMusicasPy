@@ -26,7 +26,7 @@ class DB:
         #table song_muslist
         cursor.execute('''CREATE TABLE IF NOT EXISTS song_muslist
                         (songid INTEGER NOT NULL, muslistid INTEGER NOT NULL, num INTEGER NOT NULL,
-                        PRIMARY KEY (songid, muslistid)
+                        PRIMARY KEY (songid, muslistid),
                         FOREIGN KEY (songid) REFERENCES song(id),
                         FOREIGN KEY (muslistid) REFERENCES muslist(id)
                         )''')
@@ -57,6 +57,15 @@ x = DB()
 x.create()
 x.executeInsertUpdateDelete('DELETE FROM song')
 #x.executeInsertUpdateDelete('UPDATE song SET filepath = ? where id = ?', [newfilepath,id])
-#x.executeInsertUpdateDelete('INSERT INTO song(filepath) VALUES ("C:\\Users\gabri\Desktop\Programming\Python\gerenciadorDeMusicasPy\\gui\\b.mp3")')
+#x.executeInsertUpdateDelete('INSERT INTO song(filepath) '
+#                            'SELECT "D:\Músicas\Bixiga70\\01 100% 13.mp3"'
+#                            'WHERE NOT EXISTS(SELECT 1 FROM song WHERE filepath = '
+#                            '"D:\Músicas\Bixiga70\\01 100% 13.mp3");')
+#x.executeInsertUpdateDelete('INSERT INTO song(filepath) '
+#                            'SELECT "D:\Músicas\Bixiga70\\01 100% 13.mp3"'
+#                            'WHERE NOT EXISTS(SELECT 1 FROM song WHERE filepath = '
+#                            '"D:\Músicas\Bixiga70\\01 100% 13.mp3");')
+#x.executeInsertUpdateDelete('INSERT OR IGNORE INTO song(filepath) VALUES ("D:\Músicas\Bixiga70\\01 100% 13.mp3")')
+#x.executeInsertUpdateDelete('INSERT OR IGNORE INTO song(filepath) VALUES ("D:\Músicas\Bixiga70\\01 100% 13.mp3")')
 y = x.executeSelect('SELECT * FROM song')
 print(y)

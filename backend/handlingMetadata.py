@@ -26,7 +26,7 @@ def changeFields(path, track, title, album, band):
     audio.update_to_v23()
     audio.save(v2_version=3)
 
-'''
+
 audio = MP3('D:\\Músicas\\Caro Emerald\\A Night Like This.mp3')
 print(audio.info.length)
 print(audio['TIT2'].text[0])
@@ -36,4 +36,3 @@ print(audio['TIT2'].text[0])
 #audio.save(v2_version=3)
 
 #def changeMetadata(track, title, )
-'''

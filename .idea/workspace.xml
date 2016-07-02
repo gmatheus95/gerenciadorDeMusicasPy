@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7c2d3fb-d4cf-498b-a5a8-76cf2f29dbe4" name="Default" comment="New folder directory.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas.sln" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/GerenciadorDeMusicas.pyproj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/album.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/artist.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/db.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/db_musManager.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/handlingMetadata.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/managerController.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/music.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/musicList.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/albumIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/audioBar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/audioButton.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/fixtures.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/musiclibrary.kv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/saveIcon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/main.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projeto/__init__.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gerenciadorDeMusicasPy.iml" afterPath="$PROJECT_DIR$/.idea/gerenciadorDeMusicasPy.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="e7c2d3fb-d4cf-498b-a5a8-76cf2f29dbe4" name="Default" comment="New folder directory." />
     <ignored path="gerenciadorDeMusicasPy.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -83,19 +53,35 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="-1156">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="handlingMetadata.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/handlingMetadata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="246" column="7" selection-start-line="246" selection-start-column="7" selection-end-line="246" selection-end-column="7" />
-              <folding />
+            <state relative-caret-position="561">
+              <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="managerController.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/managerController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,26 +89,18 @@
       <file leaf-file-name="db.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-              <folding>
-                <marker date="1467414323358" expanded="true" signature="136:158" ph="pragma forei... " />
-                <marker date="1467414323358" expanded="true" signature="479:606" ph="CREATE TABLE... song" />
-                <marker date="1467414323358" expanded="true" signature="664:859" ph="CREATE TABLE... musiclist" />
-                <marker date="1467414323358" expanded="true" signature="919:1277" ph="CREATE TABLE... song_muslist" />
-                <marker date="1467414323358" expanded="true" signature="1865:1881" ph="DELETE FROM " />
-                <marker date="1467414323358" expanded="true" signature="2006:2121" ph="INSERT INTO song... " />
-                <marker date="1467414323358" expanded="true" signature="2145:2163" ph="SELECT * FRO... song" />
-              </folding>
+            <state relative-caret-position="-16">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="musicList.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/musicList.py">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+            <state relative-caret-position="765">
+              <caret line="250" column="5" selection-start-line="250" selection-start-column="5" selection-end-line="250" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -163,10 +141,11 @@
         <option value="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/musiclibrary.kv" />
         <option value="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/main.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/backend/managerController.py" />
         <option value="$PROJECT_DIR$/backend/musicList.py" />
-        <option value="$PROJECT_DIR$/backend/db.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/backend/handlingMetadata.py" />
+        <option value="$PROJECT_DIR$/backend/db.py" />
+        <option value="$PROJECT_DIR$/backend/managerController.py" />
       </list>
     </option>
   </component>
@@ -177,9 +156,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1378" />
-    <option name="height" value="735" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -206,6 +186,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -254,7 +235,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -276,61 +256,7 @@
       <recent name="C:\Users\gabri\Desktop\Programming\Python\gerenciadorDeMusicasPy\Projeto\GerenciadorDeMusicas\GerenciadorDeMusicas\gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
-    <configuration default="false" name="guiMain" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Python34\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gerenciadorDeMusicasPy" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\gabri\Desktop\Programming\Python\gerenciadorDeMusicasPy\Projeto\GerenciadorDeMusicas\GerenciadorDeMusicas\main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="managerController" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gerenciadorDeMusicasPy" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\gabri\Desktop\Programming\Python\gerenciadorDeMusicasPy\Projeto\GerenciadorDeMusicas\GerenciadorDeMusicas\backend\managerController.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="guiMain (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gerenciadorDeMusicasPy" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\gabri\Desktop\Programming\Python\gerenciadorDeMusicasPy\Projeto\GerenciadorDeMusicas\GerenciadorDeMusicas\main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.db">
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -355,9 +281,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Python34\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gerenciadorDeMusicasPy" />
@@ -367,55 +293,58 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+    <configuration default="false" name="managerController (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python34\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="gerenciadorDeMusicasPy" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/managerController.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="handlingMetadata" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gerenciadorDeMusicasPy" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/handlingMetadata.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+    <configuration default="false" name="db" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="gerenciadorDeMusicasPy" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="gerenciadorDeMusicasPy" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/db.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -447,22 +376,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <module name="gerenciadorDeMusicasPy" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -576,19 +489,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.guiMain" />
-      <item index="1" class="java.lang.String" itemvalue="Python.managerController" />
-      <item index="2" class="java.lang.String" itemvalue="Python.guiMain (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.main" />
-      <item index="4" class="java.lang.String" itemvalue="Python.main (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Python.main" />
+      <item index="1" class="java.lang.String" itemvalue="Python.main (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.managerController (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.handlingMetadata" />
+      <item index="4" class="java.lang.String" itemvalue="Python.db" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
-        <item index="2" class="java.lang.String" itemvalue="Python.guiMain (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.guiMain" />
-        <item index="4" class="java.lang.String" itemvalue="Python.managerController" />
+        <item index="0" class="java.lang.String" itemvalue="Python.db" />
+        <item index="1" class="java.lang.String" itemvalue="Python.managerController (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.handlingMetadata" />
+        <item index="4" class="java.lang.String" itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -640,16 +553,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.292868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2925" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33996683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3394256" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -661,6 +573,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -683,6 +596,9 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.gitignore" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -710,17 +626,12 @@
           <url>file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/managerController.py</url>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/main.py</url>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/musiclibrary.kv" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/example/list_kv.py" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/template/pymusiclibrary.kv" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/main.py" />
@@ -750,20 +661,8 @@
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.144/kivy-master/examples/widgets/textinput.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.293/kivy-master/examples/demo/showcase/data/screens/textinputs.kv" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.472/kivy-master/examples/audio/audio.kv" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.356/kivy-master/examples/audio/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="25" selection-start-line="31" selection-start-column="4" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.378/kivy-master/examples/audio/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="29" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.356/kivy-master/examples/audio/main.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.378/kivy-master/examples/audio/main.py" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/handlingMetadata.py" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/album.py" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/artist.py" />
@@ -771,27 +670,9 @@
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/GerenciadorDeMusicas.pyproj" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/Main.py" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/musicList.py" />
-    <entry file="file://$PROJECT_DIR$/../../../main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="49" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.197/kivy-master/examples/demo/showcase/data/screens/progressbar.kv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.612/kivy-master/examples/audio/audio.kv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="53" column="14" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/main.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.197/kivy-master/examples/demo/showcase/data/screens/progressbar.kv" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.612/kivy-master/examples/audio/audio.kv" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/backend/managerController.py" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/gui/musiclibrary.kv" />
     <entry file="file://$PROJECT_DIR$/Projeto/GerenciadorDeMusicas/GerenciadorDeMusicas/main.py" />
@@ -807,49 +688,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="250" column="5" selection-start-line="250" selection-start-column="5" selection-end-line="250" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1156">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/handlingMetadata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/managerController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-996">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+        <state relative-caret-position="354">
+          <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
           <folding>
-            <marker date="1467414230111" expanded="true" signature="825:843" ph="SELECT * FRO... song" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-          <folding>
-            <marker date="1467414323358" expanded="true" signature="136:158" ph="pragma forei... " />
-            <marker date="1467414323358" expanded="true" signature="479:606" ph="CREATE TABLE... song" />
-            <marker date="1467414323358" expanded="true" signature="664:859" ph="CREATE TABLE... musiclist" />
-            <marker date="1467414323358" expanded="true" signature="919:1277" ph="CREATE TABLE... song_muslist" />
-            <marker date="1467414323358" expanded="true" signature="1865:1881" ph="DELETE FROM " />
-            <marker date="1467414323358" expanded="true" signature="2006:2121" ph="INSERT INTO song... " />
-            <marker date="1467414323358" expanded="true" signature="2145:2163" ph="SELECT * FRO... song" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="246" column="7" selection-start-line="246" selection-start-column="7" selection-end-line="246" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
