@@ -6,6 +6,7 @@ from backend.handlingMetadata import *
 from backend.db import DB
 from tkinter.filedialog import askopenfilenames
 from tkinter import Tk
+import tkinter.messagebox
 
 # this file contains the main static operations
 
@@ -26,12 +27,19 @@ class ManagerController:
         self.allArtists = []
         self.dictAlbums = {}
         self.dictArtists = {}
+        self.dictSongs = {}
         self.__root = None
         self.__dbinstance = None
+        self.songsMissing = []
 
     def __addSongToEnvironment(self, song):
         # path is in 1
         fields = retrieveFields(song[1])
+        if fields == -1:
+            self.songsMissing.append(song[1])
+            self.__dbinstance.executeInsertUpdateDelete('DELETE FROM song WHERE id = ' + str(song[0]))
+            return
+        self.dictSongs[str(song[0])] = len(self.allSongs) # mapeando as musicas por ID
         self.allSongs.append(Music(song[0], song[1], fields['track'], fields['title'], fields['album'], fields['band'],
                                    fields['duration']))
         # links the song to the album
@@ -67,6 +75,12 @@ class ManagerController:
         # adding songs from hard drive to objects
         for song in songpaths:
             self.__addSongToEnvironment(song)
+        strError = 'The following files coudn\'t be found and therefore were excluded from your library: '
+        if len(self.songsMissing) != 0:
+            for path in self.songsMissing:
+                strError += '\n' + path + '\n'
+            tkinter.messagebox.showinfo(title="Warning!", message=strError)
+
 
     # if exists, return 1, else, save in DB and return the created entry in DB to save in Environment
     def __addSongToDatabase(self, filepath):
@@ -90,6 +104,8 @@ class ManagerController:
             print(song[0])
             if (song != 1):
                 self.__addSongToEnvironment(song[0])
+        tkinter.messagebox.showinfo(title="Operation Result",
+                                    message=str(len(filenames))+" songs were added succesfully!")
 
 
 class ManagerControllerSingleton(ManagerController, metaclass=Singleton):

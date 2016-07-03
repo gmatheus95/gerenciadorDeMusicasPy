@@ -7,11 +7,9 @@ from kivy.core.audio import SoundLoader
 from kivy.properties import StringProperty, ObjectProperty, NumericProperty
 from kivy.clock import Clock
 from functools import partial
-
 from backend.managerController import *
 
 kivy.require('1.0.8')
-
 
 controller = ManagerControllerSingleton()
 
@@ -23,6 +21,8 @@ class AudioBackground(BoxLayout):
 class MetadataEditor(BoxLayout):
     pass
 
+class MusicViewer(GridLayout):
+    pass
 
 class AlbumViewer(GridLayout):
     pass
@@ -39,13 +39,14 @@ class MusicLibraryApp(App):
     currentSongDuration = NumericProperty(None)
     currentSongPosition = NumericProperty(None)
     progressBarPosition = NumericProperty(0)
-
     kv_directory = 'gui'
 
     def load_song(self, song, nothing):
+        wasPlaying = False
         # TODO: Separate selected song from playing song
         if self.sound:
             if self.sound.state != 'stop':
+                wasPlaying = True
                 self.sound.stop()
                 Clock.unschedule(self.update_progress)
         self.localSong = song
@@ -53,6 +54,40 @@ class MusicLibraryApp(App):
         self.filename = song.path
         self.sound = SoundLoader.load(self.filename)
         self.currentSongPosition = 0
+        if wasPlaying:
+            self.__play_music()
+
+
+    def __load_all_songs(self, root, all = True, artist="", band=""):
+        if root.ids["musicPanel"].children:
+            root.ids["musicPanel"].clear_widgets()
+        music_view = MusicViewer()
+        root.ids["musicPanel"].add_widget(music_view)
+
+        loader = controller.allSongs
+        if (all == False): #load all songs!
+            loader = []
+            if (artist != ""):
+                ids = artist.getSongs()
+            else:
+                ids = band.getSongs()
+            for songid in ids:
+                loader.append(controller.allSongs[controller.dictSongs[str(songid)]])
+
+        songList = []
+        for song in loader:
+            songList.append(Button(text=song.title, size=(50, 30), size_hint=(1, None)))
+            music_view.add_widget(songList[len(songList) - 1])
+
+        # If there is a song, load it and binding the buttons
+        if len(songList) > 1:
+            self.load_song(loader[0], None)
+            for num in range(0, len(songList) - 1):
+                # Using a partial to pass args
+                button_import = partial(self.load_song, loader[num])
+                songList[num].bind(on_press=button_import)
+
+        return root
 
     def build(self):
         root = AudioBackground(spacing=5)
@@ -61,18 +96,7 @@ class MusicLibraryApp(App):
         controller.initialize_components()
 
         # Listing all musics on db
-        songList = []
-        for song in controller.allSongs:
-            songList.append(Button(text=song.title, size=(50, 30), size_hint=(1, None)))
-            root.ids["musicPanel"].add_widget(songList[len(songList) - 1])
-
-        # If there is a song, load it and binding the buttons
-        if len(songList) > 1:
-            self.load_song(controller.allSongs[0], None)
-            for num in range(0, len(songList) - 1):
-                # Using a partial to pass args
-                button_import = partial(self.load_song, controller.allSongs[num])
-                songList[num].bind(on_press=button_import)
+        self.__load_all_songs(root)
 
         return root
 
@@ -87,8 +111,19 @@ class MusicLibraryApp(App):
 
         buttonList = []
         for album in controller.allAlbums:
-            buttonList.append(Button(text=album.getName(), size=(200, 200), size_hint=(None, None)))
+            nameToPrint = album.getName()
+            tam = len(album.getName())
+            #formatting album name
+            while tam > 20:
+                nameToPrint = nameToPrint[0:20]
+                nameToPrint += '\n'
+                nameToPrint += album.getName()[20:]
+                tam -= 20
+            buttonList.append(Button(text=nameToPrint, size=(200, 200), size_hint=(None, None)))
             album_view.add_widget(buttonList[len(buttonList)-1])
+            album_press = partial(self.album_press, controller.allAlbums[len(buttonList) - 1], root)
+            buttonList[len(buttonList) - 1].bind(on_press=album_press)
+
 
     def view_artists(self, root):
         if root.ids["miscPanel"].children:
@@ -98,8 +133,26 @@ class MusicLibraryApp(App):
 
         buttonList = []
         for artist in controller.allArtists:
-            buttonList.append(Button(text=artist.getName(), size=(200, 200), size_hint=(None, None)))
+            nameToPrint = artist.getName()
+            tam = len(artist.getName())
+            # formatting album name
+            while tam > 20:
+                nameToPrint = nameToPrint[0:20]
+                nameToPrint += '\n'
+                nameToPrint += artist.getName()[20:]
+                tam -= 20
+            buttonList.append(Button(text=nameToPrint,
+                                     size=(200, 200), size_hint=(None, None)))
             artist_view.add_widget(buttonList[len(buttonList) - 1])
+            artist_press = partial(self.artist_press, controller.allArtists[len(buttonList) - 1], root)
+            buttonList[len(buttonList) - 1].bind(on_press=artist_press)
+
+    def artist_press(self, artistObj, root, nothing):
+        # Listing all musics on db
+        self.__load_all_songs(root, artist=artistObj, all=False)
+
+    def album_press(self, albumObj, root, nothing):
+        self.__load_all_songs(root, all=False, band=albumObj)
 
     def view_metadata(self, root):
         if root.ids["miscPanel"].children:
@@ -107,7 +160,7 @@ class MusicLibraryApp(App):
         metadata_view = MetadataEditor()
         root.ids["miscPanel"].add_widget(metadata_view)
 
-    def play_music(self):
+    def __play_music(self):
         self.currentSongDuration = self.sound.length
 
         # stop the sound if it's currently playing
@@ -119,6 +172,17 @@ class MusicLibraryApp(App):
             self.sound.play()
             self.sound.seek(self.currentSongPosition)
             Clock.schedule_interval(self.update_progress, 0.5)
+
+    def update_progress(self, dt):
+        self.currentSongPosition = self.sound.get_pos()
+        self.progressBarPosition = (self.currentSongPosition * 100.0) / self.currentSongDuration
+
+    def play_music(self, widget):
+        self.__play_music()
+        if self.sound.status != 'stop':
+            widget.text = 'Stop'
+        else:
+            widget.text = 'Play'
 
     def update_progress(self, dt):
         self.currentSongPosition = self.sound.get_pos()

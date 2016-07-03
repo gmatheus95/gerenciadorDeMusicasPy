@@ -1,10 +1,15 @@
 from mutagen.id3 import ID3
 from mutagen.mp3 import MP3
+from mutagen import MutagenError
 
 
 def retrieveFields(path):
 
-    audio = ID3(path)
+    try:
+        audio = ID3(path)
+    except MutagenError:
+        return -1
+
     track = (audio['TRCK'].text[0] if (audio.getall('TRCK') != []) else 'unknown')
     title = (audio['TIT2'].text[0] if (audio.getall('TIT2') != []) else 'unknown')
     album = (audio['TALB'].text[0] if (audio.getall('TALB') != []) else 'unknown')

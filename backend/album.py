@@ -12,6 +12,9 @@ class Album:
         Album.nAlbums += 1
         return Album.nAlbums
 
+    def getId(self):
+        return self.__id
+
     def addSong(self, songid):
         self.__songIDs.append(songid)
 
@@ -29,3 +32,6 @@ class Album:
 
     def getArtistName(self):
         return self.__artistName
+
+    def getSongs(self):
+        return self.__songIDs

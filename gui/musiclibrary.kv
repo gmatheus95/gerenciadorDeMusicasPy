@@ -47,15 +47,10 @@
         pos_hint: {'top':1, 'right':1}
 
         # Reference for list of musics
+        # AQUI É ONDE ESTAVA O GRID LAYOUT!
         ScrollView:
             size_hint:(.45, 1)
-            GridLayout:
-                cols: 1
-                id: musicPanel
-                padding: 5
-                spacing: 5
-                height: self.minimum_height
-                size_hint: 1, None
+            id: musicPanel
 
         Splitter:
             strip_size: '4pt'
@@ -79,7 +74,7 @@
                 pos_hint: {'x': 0,'y': 0}
                 size_hint: .05, 1
                 text: 'Play'
-                on_press: app.play_music()
+                on_press: app.play_music(self)
 
             Slider:
                 min: 0.0
@@ -124,6 +119,13 @@
     spacing: 10
     height: self.minimum_height
     size_hint: None, None
+
+<MusicViewer>:
+    cols: 1
+    padding: 5
+    spacing: 5
+    height: self.minimum_height
+    size_hint: 1, None
 
 <MetadataEditor>:
     orientation: 'vertical'

@@ -11,6 +11,9 @@ class Artist:
         Artist.nArtists += 1
         return Artist.nArtists
 
+    def getId(self):
+        return self.__id
+
     def addSong(self, songid):
         self.__songIDs.append(songid)
 
@@ -25,6 +28,9 @@ class Artist:
 
     def getName(self):
         return self.__name
+
+    def getSongs(self):
+        return self.__songIDs
 
 '''     mudar nome de artista precisa pensar melhor
     def changeName(self, newname):
