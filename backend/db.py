@@ -36,7 +36,6 @@ class DB:
 
     def executeSelect(self, clause):
         cursor = self.__conn.cursor()
-        rows = None
         cursor.execute(clause)
         rows = cursor.fetchall()
         self.__conn.commit()

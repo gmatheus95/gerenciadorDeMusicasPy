@@ -85,7 +85,7 @@ class ManagerController:
     # if exists, return 1, else, save in DB and return the created entry in DB to save in Environment
     def __addSongToDatabase(self, filepath):
         if (self.__dbinstance.executeSelect('SELECT * FROM song WHERE '
-                                            'filepath = "' + filepath + '"') == None ):
+                                            'filepath = "' + filepath + '"') != [] ):
             return 1
         else:
             print('INSERT INTO song(filepath) VALUES ("' + filepath + '")')
@@ -99,13 +99,21 @@ class ManagerController:
 
         filenames = askopenfilenames(parent=self.__root, title='Choose your songs',
                                      defaultextension='.mp3', filetypes=[('MP3 File', '*.mp3')])
+
+        nErrors = 0
         for filepath in filenames:
             song = self.__addSongToDatabase(filepath)
-            print(song[0])
             if (song != 1):
+                print(song[0])
                 self.__addSongToEnvironment(song[0])
-        tkinter.messagebox.showinfo(title="Operation Result",
-                                    message=str(len(filenames))+" songs were added succesfully!")
+            else:
+                nErrors += 1
+        msg = ""
+        if (len(filenames) - nErrors) > 0:
+            msg += str(len(filenames) - nErrors) + " songs were added succesfully!"
+        if (nErrors > 0):
+            msg += '\n'+ str(nErrors) + " songs were already on the database."
+        tkinter.messagebox.showinfo(title="Operation Result", message=msg)
 
 
 class ManagerControllerSingleton(ManagerController, metaclass=Singleton):
