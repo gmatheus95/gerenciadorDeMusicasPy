@@ -1,7 +1,7 @@
 class Music:
     
     #construtor
-    def __init__(self, id, path, track, title, album, band, duration):
+    def __init__(self, id="", path="", track="", title="-", album="", band="", duration=""):
         self.__id = id
         self.__path = path
         self.__track = track

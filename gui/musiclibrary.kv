@@ -21,6 +21,11 @@
                 title: 'OLAR'
                 with_previous: False
             ActionOverflow:
+
+            ActionButton:
+                text: 'btnAddToPlaylist'
+                icon: 'gui\\playlist-512.png'
+                on_press: app.add_songs_to_playlist(root)
             ActionButton:
                 text: 'allMusicButton'
                 icon: 'atlas://data/images/defaulttheme/audio-volume-high'
@@ -41,6 +46,8 @@
                 text: 'ImportMusic'
                 icon: 'gui\\importIcon.png'
                 on_press: app.import_songs(root)
+
+
 
     BoxLayout:
         orientation: 'horizontal'
@@ -105,7 +112,7 @@
             Label:
                 id: lblSongName
                 size_hint_x: .25
-                text: "-"
+                text: app.currentSongTitle
                 color: (0, 0, 0, 1)
 
 <AlbumViewer>:
@@ -123,7 +130,7 @@
     size_hint: None, None
 
 <MusicViewer>:
-    cols: 1
+    cols: 2
     padding: 5
     spacing: 5
     height: self.minimum_height

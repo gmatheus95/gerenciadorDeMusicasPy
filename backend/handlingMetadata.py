@@ -1,6 +1,7 @@
-from mutagen.id3 import ID3
 from mutagen.mp3 import MP3
 from mutagen import MutagenError
+from mutagen.id3 import ID3, TIT2, TALB, TRCK, TPE1
+
 
 
 def retrieveFields(path):
@@ -23,11 +24,11 @@ def retrieveFields(path):
 
 def changeFields(path, track, title, album, band):
     audio = ID3(path)
-    audio['TRCK'].text[0] = track
-    audio['TIT2'].text[0] = title
-    audio['TALB'].text[0] = album
-    audio['TPE1'].text[0] = band
 
+    audio['TRCK'] = TRCK(encoding=3, text=track)
+    audio['TIT2'] = TIT2(encoding=3, text=title)
+    audio['TALB'] = TALB(encoding=3, text=album)
+    audio['TPE1'] = TPE1(encoding=3, text=band)
     # To work properly in Windows
     audio.update_to_v23()
     audio.save(v2_version=3)

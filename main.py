@@ -35,6 +35,7 @@ class MusicLibraryApp(App):
     filename = StringProperty(None)
     sound = ObjectProperty(None, allownone=True)
     localSong = None
+    currentSongTitle = StringProperty('-')
     localSongPos = 0
     volume = NumericProperty(1.0)
     currentSongDuration = NumericProperty(None)
@@ -46,7 +47,6 @@ class MusicLibraryApp(App):
     playList = []
     buttonStatus = "Play"
 
-
     def load_song(self,  root, song, nothing='nothing'):
         wasPlaying = False
         # TODO: Separate selected song from playing song
@@ -56,8 +56,8 @@ class MusicLibraryApp(App):
                 self.sound.stop()
                 Clock.unschedule(self.update_progress)
         self.localSong = song
+        self.currentSongTitle = self.localSong.title
         self.filename = song.path
-        root.ids['lblSongName'].text = self.localSong.title
         self.sound = SoundLoader.load(self.filename)
         self.currentSongPosition = 0
         if wasPlaying:
@@ -84,7 +84,9 @@ class MusicLibraryApp(App):
 
         songList = []
         for song in self.playList:
-            songList.append(Button(text=song.title, size=(50, 30), size_hint=(1, None)))
+            songList.append(Button(text=song.title, size=(50, 30), size_hint=(0.8, None)))
+            music_view.add_widget(songList[len(songList) - 1])
+            songList.append(Button(text="+", size=(50, 30), size_hint=(0.2, None)))
             music_view.add_widget(songList[len(songList) - 1])
             self.localSongPos = 0
 
@@ -93,11 +95,16 @@ class MusicLibraryApp(App):
             if (self.onBuild == True):
                 self.load_song(root, self.playList[0], None)
                 self.onBuild = False
+            ''' AQUI TEM QUE POR OS EVENTHANDLERS DO + E DO BOTAO DE MUSICA!!!!
             for num in range(0, len(songList)):
                 # Using a partial to pass args
-                button_import = partial(self.load_song, root, self.playList[num])
-                songList[num].bind(on_press=button_import)
-
+                if (num % 2 == 0):
+                    button_import = partial(self.load_song, root, self.playList[num])
+                    songList[num].bind(on_press=button_import)
+                else:
+                    button_import = partial(self.load_single_song, root, self.playList[num])
+                    songList[num].bind(on_press=button_import)
+            '''
         return root
 
     def build(self):
@@ -112,6 +119,11 @@ class MusicLibraryApp(App):
         self.__load_all_songs(root)
 
         return root
+
+    def add_songs_to_playlist(self):
+        # adiciona todas as musicas visiveis no fim da playlist corrente
+        pass
+
 
     def view_all_songs(self,root):
         self.__load_all_songs(root)
