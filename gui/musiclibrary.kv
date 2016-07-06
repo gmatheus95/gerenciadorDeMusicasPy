@@ -18,6 +18,7 @@
         ActionView:
             use_separator: True
             ActionPrevious:
+                app_icon: "gui\\logo.png"
                 title: app.currentSongTitle
                 with_previous: False
             ActionOverflow:
@@ -32,7 +33,7 @@
                 on_press: app.view_playlist(root)
             ActionButton:
                 text: 'Show all musics'
-                icon: 'atlas://data/images/defaulttheme/audio-volume-high'
+                icon: 'gui\\allMusics.png'
                 on_press: app.view_all_songs(root)
             ActionButton:
                 text: 'Change metadata info'
