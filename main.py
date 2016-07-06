@@ -81,22 +81,32 @@ class MusicLibraryApp(App):
 
     def __remove_playlist(self, root, index, nothing=None):
         del self.playList[index]
-        if self.playList == [] or self.localSongPos == index:
+        if self.playList == []:
             self.localSong = None
             self.sound.stop()
             Clock.unschedule(self.update_progress)
             self.sound.unload()
             self.buttonStatus = "Play"
+        else:
+            if self.localSongPos == index:
+                self.localSong = self.playList[index]
+                self.sound.stop()
+                Clock.unschedule(self.update_progress)
+                self.load_song(root,self.localSong,index)
+                self.buttonStatus = "Play"
         self.view_playlist(root)
 
     def clear_playlist(self, root):
         self.playList = []
         self.localSong = None
-        self.sound.stop()
-        Clock.unschedule(self.update_progress)
-        self.sound.unload()
-        self.buttonStatus = "Play"
-        self.view_playlist(root)
+        try:
+            self.sound.stop()
+            Clock.unschedule(self.update_progress)
+            self.sound.unload()
+            self.buttonStatus = "Play"
+            self.view_playlist(root)
+        except:
+            return
 
     def next_playlist(self, root):
         if self.localSongPos >= (len(self.playList) - 1):
@@ -140,7 +150,7 @@ class MusicLibraryApp(App):
         # If there is a song, load it and binding the buttons
         if len(songButtonList) > 0:
             for num in range(0, len(songButtonList)):
-                button_import = partial(self.load_song, root, num)
+                button_import = partial(self.load_song, root, self.playList[num])
                 songButtonList[num].bind(on_press=button_import)
                 playlist_button_import = partial(self.__remove_playlist, root, num)
                 playlistButtonList[num].bind(on_press=playlist_button_import)
@@ -288,6 +298,7 @@ class MusicLibraryApp(App):
             root.ids["miscPanel"].add_widget(metadata_view)
 
     def __play_music(self):
+
         self.currentSongDuration = self.sound.length
 
         # stop the sound if it's currently playing
@@ -301,7 +312,10 @@ class MusicLibraryApp(App):
             Clock.schedule_interval(self.update_progress, 0.5)
 
     def play_music(self, widget):
-        self.__play_music()
+        try:
+            self.__play_music()
+        except:
+            return
         if self.sound.status != 'stop':
             self.buttonStatus = 'Stop'
         else:
