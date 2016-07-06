@@ -48,7 +48,7 @@ class Music:
             
     def getDur(self):
             return self.__duration
-        
+
     track = property(getTrack, setTrack)
     title = property(getTitle, setTitle)
     album = property(getAlbum, setAlbum)

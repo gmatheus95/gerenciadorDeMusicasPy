@@ -18,36 +18,38 @@
         ActionView:
             use_separator: True
             ActionPrevious:
-                title: 'OLAR'
+                title: app.currentSongTitle
                 with_previous: False
             ActionOverflow:
 
             ActionButton:
-                text: 'btnAddToPlaylist'
-                icon: 'gui\\playlist-512.png'
-                on_press: app.add_songs_to_playlist(root)
+                text: 'Clear Playlist'
+                icon: 'gui\\clearIcon.png'
+                on_press: app.clear_playlist(root)
             ActionButton:
-                text: 'allMusicButton'
+                text: 'Show Playlist'
+                icon: 'gui\\playlist-512.png'
+                on_press: app.view_playlist(root)
+            ActionButton:
+                text: 'Show all musics'
                 icon: 'atlas://data/images/defaulttheme/audio-volume-high'
                 on_press: app.view_all_songs(root)
             ActionButton:
-                text: 'Btn1'
+                text: 'Change metadata info'
                 icon: 'gui\\saveIcon.png'
                 on_press: app.view_metadata(root)
             ActionButton:
-                text: 'Btn2'
+                text: 'View all albums'
                 icon: 'gui\\albumIcon.png'
                 on_press: app.view_albums(root)
             ActionButton:
-                text: 'ArtistView'
+                text: 'View all artists'
                 icon: 'gui\\artistsIcon.png'
                 on_press: app.view_artists(root)
             ActionButton:
-                text: 'ImportMusic'
+                text: 'Import musics'
                 icon: 'gui\\importIcon.png'
                 on_press: app.import_songs(root)
-
-
 
     BoxLayout:
         orientation: 'horizontal'
@@ -80,54 +82,71 @@
         BoxLayout:
             Button:
                 pos_hint: {'x': 0,'y': 0}
+                size_hint: .02, 1
+                text: "<<"
+                on_press: app.previous_playlist(root)
+            Button:
+                pos_hint: {'x': 0,'y': 0}
                 size_hint: .05, 1
-                text: 'Play'
+                text: app.buttonStatus
                 on_press: app.play_music(self)
+            Button:
+                pos_hint: {'x': 0,'y': 0}
+                size_hint: .02, 1
+                text: ">>"
+                on_press: app.next_playlist(root)
 
             Slider:
                 min: 0.0
                 max: 1.0
                 value: 1.0
                 orientation: "horizontal"
-                size_hint_x: .25
+                size_hint_x: .20
                 pos_hint: {'x': 0,'y': 0}
                 on_value: app.set_volume(self.value)
 
+            Widget:
+                size_hint_x: .02
+                pos_hint: {'x': 0,'y': 0}
+
             # Music progress bar
             ProgressBar:
-                size_hint_x: .50
+                size_hint_x: .5
                 height: '48dp'
                 min: 0.0
                 max: 100.0
                 value: app.progressBarPosition
                 #on_value: app.move_position(self.value_normalized)
 
-#                canvas:
-#                    Color:
-#                        rgb: 0, 0, 0
-#                    Rectangle:
-#                        pos: self.pos
-#                        size: self.size
+            Widget:
+                size_hint_x: .03
+                pos_hint: {'x': 0,'y': 0}
 
-            Label:
-                id: lblSongName
-                size_hint_x: .25
-                text: app.currentSongTitle
-                color: (0, 0, 0, 1)
+            Button:
+                pos_hint: {'x': 0,'y': 0}
+                size_hint: .08, 1
+                text: "Shuffle"
+                on_press: app.shuffle_playlist(root)
+            Button:
+                pos_hint: {'x': 0,'y': 0}
+                size_hint: .08, 1
+                text: app.repeatButtonStatus
+                on_press: app.change_repeat_status()
+
 
 <AlbumViewer>:
     cols: 3
     padding: 10
     spacing: 10
     height: self.minimum_height
-    size_hint: None, None
+    size_hint: 1, None
 
 <ArtistViewer>:
     cols: 3
     padding: 10
     spacing: 10
     height: self.minimum_height
-    size_hint: None, None
+    size_hint: 1, None
 
 <MusicViewer>:
     cols: 2
@@ -155,6 +174,8 @@
             multiline: False
             text: app.localSong.title
             on_text: app.change_title(self)
+        Widget:
+            size_hint_x:.05
     BoxLayout:
         orientation: 'horizontal'
         size_hint_y: None
@@ -171,6 +192,8 @@
             multiline: False
             text: app.localSong.band
             on_text: app.change_artist(self)
+        Widget:
+            size_hint_x:.05
     BoxLayout:
         orientation: 'horizontal'
         size_hint_y: None
@@ -187,6 +210,8 @@
             multiline: False
             text: app.localSong.album
             on_text: app.change_album(self)
+        Widget:
+            size_hint_x:.05
     BoxLayout:
         orientation: 'horizontal'
         size_hint_y: None
@@ -203,9 +228,12 @@
             multiline: False
             text: app.localSong.track
             on_text: app.change_track(self)
+        Widget:
+            size_hint_x:.05
     Widget:
     Button:
-        text: 'BOTAO'
-        size_hint: (.5, .2)
+        text: 'Save changes'
+        size_hint: (.5, .4)
+        pos_hint: {'center_x':.5}
         on_press: app.save_metadata()
     Widget:
