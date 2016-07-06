@@ -150,7 +150,7 @@ class MusicLibraryApp(App):
         # If there is a song, load it and binding the buttons
         if len(songButtonList) > 0:
             for num in range(0, len(songButtonList)):
-                button_import = partial(self.load_song, root, self.playList[num])
+                button_import = partial(self.load_song, root, self.playList[num], num)
                 songButtonList[num].bind(on_press=button_import)
                 playlist_button_import = partial(self.__remove_playlist, root, num)
                 playlistButtonList[num].bind(on_press=playlist_button_import)
